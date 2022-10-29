@@ -71,7 +71,7 @@ const StudentForm = (props) => {
 
   return (
     <>
-      <form className="col-3 p-4" onSubmit={handleSubmit}>
+      <form className="col-md-3 p-4" onSubmit={handleSubmit}>
         
         <div className="form-group my-2">
           <label htmlFor="first_name">Nombre:</label>

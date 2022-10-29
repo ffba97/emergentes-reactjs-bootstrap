@@ -17,7 +17,7 @@ const StudentsList = (props) => {
 
   const CrearTabla = () => {
     return (
-      <div className="col-9 m-0">
+      <div className="col-md-9 m-0">
         <table className={dark==='checked'?"table table-dark":"table"}>
           <thead>
             <tr>
