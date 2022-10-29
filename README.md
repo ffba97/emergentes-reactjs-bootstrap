@@ -2,7 +2,8 @@
 
 ### Agregado:
 
-**Dark Mode**
-**Validación de formulario**
-**LocalStore**
+* Dark Mode
+
+* Validación de formulario
+*LocalStore
 
