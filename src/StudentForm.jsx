@@ -13,25 +13,30 @@ const StudentForm = (props) => {
   const validar = () => {
     let name = document.querySelector('[name="first_name"]');
     let lastName = document.querySelector('[name="last_name"]');
-
+    let valido = true;
     let alert = document.querySelector(".alert");
+    
+    name.classList.remove('border-danger');
+    lastName.classList.remove('border-danger');
     alert.classList.remove('d-none');
+
+
 
     if (formValues.first_name.length === 0) {
       name.classList.add("border-danger");
-    } else {
-      alert.classList.add('d-none')
-      name.classList.remove("border-danger");
+      valido =false;
     }
 
     if (formValues.last_name.length === 0) {
       lastName.classList.add("border-danger");
-    } else {
-      alert.classList.add('d-none');
-      lastName.classList.remove("border-danger");
-      return true;
+      valido = false
+    } 
+
+    if(valido){
+        alert.classList.add('d-none')
     }
-    return false;
+
+    return valido;
   };
 
   const handleChange = (event) => {
@@ -69,7 +74,7 @@ const StudentForm = (props) => {
       <form className="col-3 p-4" onSubmit={handleSubmit}>
         
         <div className="form-group my-2">
-          <label for="first_name">Nombre:</label>
+          <label htmlFor="first_name">Nombre:</label>
           <input
             className={dark==='checked'?"mx-3 form-control bg-dark text-white":"mx-3 form-control"}
             placeholder="Introduce el nombre"
@@ -80,7 +85,7 @@ const StudentForm = (props) => {
           />
         </div>
         <div className="form-group my-2">
-          <label for="last_name">Apellido:</label>
+          <label htmlFor="last_name">Apellido:</label>
           <input
             className={dark==='checked'?"mx-3 form-control bg-dark text-white":"mx-3 form-control"}
             placeholder="Introduce el apellido"
@@ -99,12 +104,12 @@ const StudentForm = (props) => {
             checked={formValues.is_active}
             onChange={handleChange}
           />
-          <label className="form-check-label" for="is_active">
+          <label className="form-check-label" htmlFor="is_active">
             Activo
           </label>
         </div>
         <div>
-          <label for="carreer">Carrera:</label>
+          <label htmlFor="carreer">Carrera:</label>
           <select
             className="mx-3 form-select"
             name="carreer"

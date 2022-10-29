@@ -18,33 +18,33 @@ const DarkMode = (props) => {
 
   if (dark === "checked") {
     return (
-      <div class="form-check form-switch">
+      <div className="form-check form-switch">
         {body()}
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
           role="switch"
           id="flexSwitchCheckChecked"
           onChange={handleChangeMode}
           checked
         />
-        <label class="form-check-label" for="flexSwitchCheckChecked">
+        <label className="form-check-label" htmlFor="flexSwitchCheckChecked">
           Dark Mode
         </label>
       </div>
     );
   } else {
     return (
-      <div class="form-check form-switch">
+      <div className="form-check form-switch">
         {body()}
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
           role="switch"
           id="flexSwitchCheckDefault"
           onChange={handleChangeMode}
         />
-        <label class="form-check-label" for="flexSwitchCheckDefault">
+        <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
           Dark Mode
         </label>
       </div>
