@@ -28,13 +28,6 @@ const App = () => {
     localStorage.setItem("dark", dark);
   }, [dark]);
 
-  // useEffect(() => {
-  //   const alumnos = JSON.parse(localStorage.getItem("students"));
-  //   if (alumnos) {
-  //     setStudents(JSON.parse(localStorage.getItem("students")));
-  //   }
-  // }, []);
-
   useEffect(() => {
     localStorage.setItem("students", JSON.stringify(students));
   }, [students]);
