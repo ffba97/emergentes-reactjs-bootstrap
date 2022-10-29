@@ -1,4 +1,5 @@
 {
+  "homepage": "https://ffba97.github.io/emergentes",
   "name": "react-example",
   "version": "0.1.0",
   "private": true,
@@ -12,6 +13,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -34,5 +37,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "bootstrap": "^5.2.2",
+    "gh-pages": "^4.0.0"
   }
 }
