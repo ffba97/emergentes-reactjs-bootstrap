@@ -1,9 +1,9 @@
 ## [Click para verlo desplegado](https://ffba97.github.io/emergentes/)
 
-### Agregado:
+Agregado:
 
 * Dark Mode
 
 * Validación de formulario
-*LocalStore
+* LocalStore
 
