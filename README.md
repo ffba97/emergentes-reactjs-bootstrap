@@ -6,3 +6,8 @@ Agregado:
 * Validación de formulario
 * LocalStore
 
+## Screens:
+### Dark
+![ScreenShot](https://i.imgur.com/bYO3nK0.png)
+### Light
+![ScreenShot](https://i.imgur.com/Vywdc33.png)
