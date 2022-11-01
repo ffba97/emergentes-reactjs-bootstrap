@@ -1,4 +1,8 @@
 import React from "react";
+import { FaEdit } from "react-icons/fa";
+import { FaTrashAlt } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
 
 const StudentsList = (props) => {
   const list = props.list;
@@ -18,7 +22,7 @@ const StudentsList = (props) => {
   const CrearTabla = () => {
     return (
       <div className="col-md-9 m-0">
-        <table className={dark==='checked'?"table table-dark":"table"}>
+        <table className={dark === "checked" ? "table table-dark" : "table"}>
           <thead>
             <tr>
               <th cla>ID</th>
@@ -32,23 +36,23 @@ const StudentsList = (props) => {
           <tbody>
             {list.map((student) => (
               <tr key={student.id}>
-                <td>{student.id}</td>
-                <td>{student.first_name}</td>
-                <td>{student.last_name}</td>
-                <td>{student.carreer}</td>
-                <td>{student.is_active ? "Activo" : "Inactivo"}</td>
+                <td className="align-middle">{student.id}</td>
+                <td className="align-middle">{student.first_name}</td>
+                <td className="align-middle">{student.last_name}</td>
+                <td className="align-middle">{student.carreer}</td>
+                <td className="align-middle">{student.is_active ? <span className="text-success"><FaCheck/> Activo</span> : <span className="text-danger"><FaTimes/> Inactivo</span>}</td>
                 <td>
                   <button
                     className="btn btn-primary mx-1"
                     onClick={() => handleEditClick(student)}
                   >
-                    Editar
+                    <FaEdit /> Editar
                   </button>
                   <button
                     className="btn btn-danger mx-1"
                     onClick={() => handleDeleteClick(student)}
                   >
-                    Eliminar
+                    <FaTrashAlt /> Eliminar
                   </button>
                 </td>
               </tr>
@@ -59,8 +63,7 @@ const StudentsList = (props) => {
     );
   };
 
-  return <>
-  {list.length > 0 ? <CrearTabla /> : ""}</>;
+  return <>{list.length > 0 ? <CrearTabla /> : ""}</>;
 };
 
 export default StudentsList;

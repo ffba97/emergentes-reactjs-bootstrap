@@ -4,18 +4,18 @@ import StudentForm from "./StudentForm";
 import StudentsList from "./StudentsList";
 import DarkMode from "./DarkMode";
 
-const getStudents =()=>{
-  let students = localStorage.getItem('students');
-  if(students){
-  return JSON.parse(students)}
-  return []
-}
+const getStudents = () => {
+  let students = localStorage.getItem("students");
+  if (students) {
+    return JSON.parse(students);
+  }
+  return [];
+};
 
 const App = () => {
   const [students, setStudents] = useState(getStudents());
   const [studentOnEdit, setStudentOnEdit] = useState();
   const [dark, setDark] = useState(localStorage.getItem("dark"));
-
 
   useEffect(() => {
     const mode = localStorage.getItem("dark");
@@ -88,16 +88,17 @@ const App = () => {
 
   return (
     <>
-      <div className="container my-4">
-        <DarkMode changeMode={handleDarkMode} actualMode={dark} />
-      </div>
       <Box>
         <StudentForm
           onSave={handleSaveStudent}
           initialStudent={initialStudent}
           onCancel={handleCancel}
           actualMode={dark}
-        />
+        >
+          <div className="container my-4">
+            <DarkMode changeMode={handleDarkMode} actualMode={dark} />
+          </div>
+        </StudentForm>
         <StudentsList
           list={students}
           onDelete={handleDeleteStudent}
