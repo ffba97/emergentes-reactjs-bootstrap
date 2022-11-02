@@ -11,7 +11,7 @@ const StudentsList = (props) => {
   const dark = props.actualMode;
 
   const handleDeleteClick = (student) => {
-    let c = window.confirm("estas seguro?");
+    let c = window.confirm("Estas seguro que deseas eliminar?");
     return c ? onDelete(student) : "";
   };
 
